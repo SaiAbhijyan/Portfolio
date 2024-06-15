@@ -1,49 +1,48 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './Home.css';
+import React, { useEffect } from 'react';
+import './Home.css'; // Import the CSS file
 
 const Home = () => {
-    const interBubbleRef = useRef(null);
-    const [curX, setCurX] = useState(0);
-    const [curY, setCurY] = useState(0);
-    const [tgX, setTgX] = useState(0);
-    const [tgY, setTgY] = useState(0);
-
     useEffect(() => {
-        const move = () => {
-            setCurX((prevCurX) => prevCurX + (tgX - prevCurX) / 20);
-            setCurY((prevCurY) => prevCurY + (tgY - prevCurY) / 20);
-
-            if (interBubbleRef.current) {
-                interBubbleRef.current.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-            }
-
-            requestAnimationFrame(move);
-        };
-
-        const handleMouseMove = (event) => {
-            setTgX(event.clientX);
-            setTgY(event.clientY);
+        const handleMouseMove = (e) => {
+            const interactive = document.querySelector('.interactive');
+            interactive.style.left = `${e.clientX - 150}px`; // Adjust for centering
+            interactive.style.top = `${e.clientY - 150}px`;  // Adjust for centering
         };
 
         window.addEventListener('mousemove', handleMouseMove);
-        move();
 
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
         };
-    }, [curX, curY, tgX, tgY]);
+    }, []);
 
     return (
-        <div className="home-container text-white">
-            <main className="home-main">
-                <div className="home-status">Open to Work</div>
-                <h1 className="home-heading">
-                    A well balanced and detail oriented developer<br />from India
-                </h1>
-                <p className="home-subheading">Tech Enthusiast</p>
-                <button className="home-resume-button">See Resume</button>
-                <div ref={interBubbleRef} className="interactive" />
-            </main>
+        <div className="home">
+            <div className="centered-text">
+                <h2>Sai Abhi T</h2>
+            </div>
+            <div>
+                
+            </div>
+            <div className="gradient-bg">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+                <div className="gradients-container">
+                    <div className="g1"></div>
+                    <div className="g2"></div>
+                    <div className="g3"></div>
+                    <div className="g4"></div>
+                    <div className="g5"></div>
+                    <div className="interactive"></div>
+                </div>
+            </div>
         </div>
     );
 }
