@@ -40,7 +40,7 @@ const Home = () => {
                             <span>Application Development</span>
                             <span>Machine Learning</span>
                             <span>Cloud Computing</span>
-                            <span>Researching new technologies</span>
+                            <span>Data Science</span>
                             </span></h2>
                     </div>
                     </div>

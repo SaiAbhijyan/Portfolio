@@ -73,26 +73,23 @@ html, body {
 }
 
 .centered-text-inner p {
-  margin: 0;
   font-size: 35px;
 }
 
 .rotator-wrapper {
-  
   position: relative;
-
 }
 
 .rotator-wrapper span {
   display: inline-block;
-  min-width: 155px;
+  min-width: 290px;
   text-align: left;
 }
 
 .rotator-wrapper span span {
-  position: absolute;
+  position:absolute;
   font-weight: bold;
-  top: -0px;
+  top: 0px;
   opacity: 0;
   animation: rotateWord 18s linear infinite 0s;
   color: white;
