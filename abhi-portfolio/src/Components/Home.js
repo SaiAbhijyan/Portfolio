@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import './Home.css'; // Import the CSS file
+import './Home.css'; 
 
 const Home = () => {
     useEffect(() => {
         const handleMouseMove = (e) => {
             const interactive = document.querySelector('.interactive');
-            interactive.style.left = `${e.clientX - 150}px`; // Adjust for centering
-            interactive.style.top = `${e.clientY - 150}px`;  // Adjust for centering
+            interactive.style.left = `${e.clientX}px`; 
+            interactive.style.top = `${e.clientY}px`; 
         };
 
         window.addEventListener('mousemove', handleMouseMove);
@@ -18,13 +18,33 @@ const Home = () => {
 
     return (
         <div className="home">
-            <div className="centered-text">
-                <h2>Sai Abhi T</h2>
-            </div>
-            <div>
-                
-            </div>
             <div className="gradient-bg">
+                <header className="navbar">
+                <div className="navbar-title">Sai Abhijyan T</div>
+                <nav className="navbar-nav">
+                    <a href="#NAv" className="navbar-nav-link">About</a>
+                    <a href="#N" className="navbar-nav-link">Experience</a>
+                    <a href="#n" className="navbar-nav-link">Skills</a>
+                    <a href="#M" className="navbar-nav-link">Education</a>
+                    <a href="#M" className="navbar-nav-link">Contact</a>
+                </nav>
+                <button className="navbar-button">Connect on LinkedIn</button>
+                </header>
+                <div className="centered-text">
+                    <h6>Hi, I'm Sai Abhi T 🙏</h6>
+                    <div className='centered-text-inner'>
+                        <p>I'm a passionate software engineer with an intest in</p>
+                        <div class="rotator-wrapper">
+                            <h2><span class="rotator">
+                            <span>Full-Stack Development</span>
+                            <span>Application Development</span>
+                            <span>Machine Learning</span>
+                            <span>Cloud Computing</span>
+                            <span>Researching new technologies</span>
+                            </span></h2>
+                    </div>
+                    </div>
+                </div>
                 <svg xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="goo">
