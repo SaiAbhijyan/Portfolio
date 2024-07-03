@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import './Home.css'; 
 
 const Home = () => {
+    const scrollToSection = (id) =>{
+        const ele = document.getElementById(id);
+        if(ele){
+            ele.scrollIntoView({behavior:"smooth"});
+        }
+    }
     useEffect(() => {
         const handleMouseMove = (e) => {
             const interactive = document.querySelector('.interactive');
@@ -22,26 +28,25 @@ const Home = () => {
                 <header className="navbar">
                 <div className="navbar-title">Sai Abhijyan T</div>
                 <nav className="navbar-nav">
-                    <a href="#NAv" className="navbar-nav-link">About</a>
-                    <a href="#N" className="navbar-nav-link">Experience</a>
-                    <a href="#n" className="navbar-nav-link">Skills</a>
-                    <a href="#M" className="navbar-nav-link">Education</a>
-                    <a href="#M" className="navbar-nav-link">Contact</a>
+                    <div className="navbar-nav-link" onClick={()=> scrollToSection("About")}>About</div>
+                    <div className="navbar-nav-link" onClick={()=> scrollToSection("Experience")}>Experience</div>
+                    <div className="navbar-nav-link" onClick={()=> scrollToSection("Skills")}>Skills</div>
+                    <div className="navbar-nav-link" onClick={()=> scrollToSection("Education")}>Education</div>
+                    <div className="navbar-nav-link" onClick={()=> scrollToSection("Contact")}>Contact</div>
                 </nav>
                 <button className="navbar-button">Connect on LinkedIn</button>
                 </header>
                 <div className="centered-text">
-                    <h6>Hi, I'm Sai Abhi T 🙏</h6>
+                    <p>Hi, I'm <strong>Sai Abhi T 💩</strong></p>
                     <div className='centered-text-inner'>
                         <p>I'm a passionate software engineer with an intest in</p>
                         <div class="rotator-wrapper">
-                            <h2><span class="rotator">
-                            <span>Full-Stack Development</span>
-                            <span>Application Development</span>
+                            <p><span class="rotator">
+                            <span>Full-Stack Dev</span>
                             <span>Machine Learning</span>
                             <span>Cloud Computing</span>
                             <span>Data Science</span>
-                            </span></h2>
+                            </span></p> 
                     </div>
                     </div>
                 </div>

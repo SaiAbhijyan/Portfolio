@@ -65,6 +65,8 @@ html, body {
   top: 0;
   left: 0;
   z-index: 100;
+  font-size: 65px;
+  margin: 0 0 20px 0;
 }
 
 .centered-text h6 {
@@ -74,9 +76,12 @@ html, body {
 
 .centered-text-inner p {
   font-size: 35px;
+  padding-bottom: 40px;
 }
 
 .rotator-wrapper {
+  font-family: 'Montserrat', sans-serif;;
+  font-size: 25px;
   position: relative;
 }
 
